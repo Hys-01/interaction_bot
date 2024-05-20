@@ -10,3 +10,12 @@ hmmm
 
 '''
 API_KEY = ""
+#return = requests.post(url=API_KEY, )
+
+class HuggingFaceAPIClient:
+    def __init__(self, api_key, model):
+        self.key = api_key
+        self.model_url = model
+    
+    def ask_server():
+        pass

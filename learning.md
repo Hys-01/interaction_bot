@@ -6,5 +6,4 @@ POST requests also allow more data to be sent in the request (data, headers, API
 
 
 
-https://shubhendu-ghosh.medium.com/how-to-use-hugging-face-models-in-your-project-8daf48db3ab5
-    promising guide
+https://huggingface.co/docs/huggingface_hub/en/guides/inference
