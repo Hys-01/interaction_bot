@@ -23,12 +23,15 @@ class HuggingFaceAPIClient:
     
     def ask_server(self, payload):
         headers = {"Authorization": f"Bearer {self.key}"}
-        response = requests.post(self.model_url, headers=headers, json=payload)
+        response = requests.post(self.model_url, headers=headers, json=payload, timeout=1)  # 1 second tiemeout for TimeoutError
+
+        response.raise_for_status()  # check for HTTPError
+        print("99999999999999999999999999999999999999",response.status_code)
+
         return response.json()
     
 payload_1 = "Hello, World!"
 HF_api_key = os.getenv('HF_API_KEY')
-print(HF_api_key)
 HF_model = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 HF_Client = HuggingFaceAPIClient(HF_api_key, HF_model)
 
