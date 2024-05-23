@@ -9,3 +9,6 @@ payload_1 = "Hi!"
 
 r_1 = HF_Client.ask_server(payload_1)
 print(r_1)
+
+
+# plans to use a loop, plans to print out JUST the value from each [{'generated_text': '.response.'}]
