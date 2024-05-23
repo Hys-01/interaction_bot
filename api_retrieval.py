@@ -23,7 +23,12 @@ class HuggingFaceAPIClient:
     
     def ask_server(self, payload):
         headers = {"Authorization": f"Bearer {self.key}"}
-        response = requests.post(self.model_url, headers=headers, json=payload, timeout=1)  # 1 second tiemeout for TimeoutError
+
+        format_payload = f"<s> [INST] {payload} [/INST]"
+
+
+
+        response = requests.post(self.model_url, headers=headers, json=format_payload, timeout=1)  # 1 second tiemeout for TimeoutError
 
         response.raise_for_status()  # check for HTTPError
         print("99999999999999999999999999999999999999",response.status_code)
