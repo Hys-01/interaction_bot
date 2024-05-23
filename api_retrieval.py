@@ -1,4 +1,6 @@
 import requests
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
 
 import os 
 from dotenv import load_dotenv
@@ -24,20 +26,20 @@ class HuggingFaceAPIClient:
     def ask_server(self, payload):
         headers = {"Authorization": f"Bearer {self.key}"}
 
-        format_payload = f"<s> [INST] {payload} [/INST]"
+        format_payload = {"inputs": payload}
 
 
 
         response = requests.post(self.model_url, headers=headers, json=format_payload, timeout=1)  # 1 second tiemeout for TimeoutError
 
         response.raise_for_status()  # check for HTTPError
-        print("99999999999999999999999999999999999999",response.status_code)
+        # normal response is 200
 
         return response.json()
     
-payload_1 = "Hello, World!"
+payload_1 = "Hi, whats your name? "
 HF_api_key = os.getenv('HF_API_KEY')
-HF_model = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+HF_model = "microsoft/DialoGPT-medium"
 HF_Client = HuggingFaceAPIClient(HF_api_key, HF_model)
 
 print(HF_Client.ask_server(payload_1))
