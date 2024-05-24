@@ -13,12 +13,14 @@ print(r_1[0].get('generated_text'))
 
 # plans to use a loop, plans to print out JUST the value from each [{'generated_text': '.response.'}]
 
-'''print("Press 0 to exit")
+print("Press 0 to exit")
 user_input = input(">> User: ")
 
 while user_input!="0":
     r = HF_Client.ask_server(user_input)
-    print(r['generated_text'])'''
+    print(">> Dialo: " + r[0].get('generated_text'))
 
+
+    user_input = input(">> User: ")
 
 
