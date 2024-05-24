@@ -33,6 +33,7 @@ class HuggingFaceAPIClient:
         response = requests.post(self.model_url, headers=headers, json=format_payload, timeout=1)  # 1 second tiemeout for TimeoutError
         response.raise_for_status()  # check for HTTPError
         # normal response is 200
+        
         return response.json()
     
 class OpenAIApiClient():
