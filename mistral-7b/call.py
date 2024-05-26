@@ -11,9 +11,9 @@ messages = [
     {"role": "assistant", "content": "Understood! Nice to meet you."},
 ]
 start = timer() 
-chatbot = pipeline("text-generation", model="mistralai/Mistral-7B-Instruct-v0.3",max_new_tokens=30)
+chatbot = pipeline("text-generation", model="mistralai/Mistral-7B-Instruct-v0.3",max_new_tokens=30)  #~pipeline itself takes under 1 min
 end=timer()
-response = chatbot(messages)
+response = chatbot(messages)   # chatbot() function takes 15 mins, overall = 16
 end2 = timer()
 
 print(response)
