@@ -1,12 +1,5 @@
-from transformers import pipeline
-
-chatbot = pipeline("text-generation", model="distilgpt2", max_new_tokens=30)
-
-# Example usage
-messages = [
-    "User: You are a chatbot who always responds in a happy tone.",
-    "Assistant: Understood! Nice to meet you.",
-]
-
-response = chatbot(messages)
-print(response)
+from transformers import pipeline, set_seed
+generator = pipeline('text-generation', model='gpt2')
+set_seed(42)
+responses = generator("Hello, I'm a language model,", max_length=30, num_return_sequences=5)
+print(responses)
