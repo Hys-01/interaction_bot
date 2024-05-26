@@ -7,3 +7,13 @@ POST requests also allow more data to be sent in the request (data, headers, API
 
 
 https://huggingface.co/docs/huggingface_hub/en/guides/inference
+
+
+transformers installation
+    https://huggingface.co/transformers/v3.0.2/installation.html 
+
+transformers.pipeline
+    https://huggingface.co/docs/transformers/en/main_classes/pipelines 
+
+LLM generation
+    https://huggingface.co/docs/transformers/en/llm_tutorial !!!!****   
