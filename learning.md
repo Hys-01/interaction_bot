@@ -17,3 +17,7 @@ transformers.pipeline
 
 LLM generation
     https://huggingface.co/docs/transformers/en/llm_tutorial !!!!****   
+
+
+EFFICIENCY OF GENERATION:
+    https://discuss.huggingface.co/t/text-generation-pipeline-prohibitively-slow-to-load-even-with-cached-model/40322 

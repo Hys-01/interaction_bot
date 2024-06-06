@@ -2,7 +2,7 @@ import timeit
 import torch
 
 import asyncio
-from transformers import pipeline, Conversation, AutoModelForSeq2SeqLM, AutoTokenizer, AutoModelForCausalLM
+from transformers import pipeline, Conversation, AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 print(torch.cuda.is_available())
 print(torch.cuda.current_device())
@@ -12,7 +12,7 @@ model_name = "facebook/blenderbot-1B-distill"
 
 # Load the tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name,
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name,
         torch_dtype=torch.float16, load_in_8bit=True)
 
 
