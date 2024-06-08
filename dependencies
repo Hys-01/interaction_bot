@@ -1,0 +1,4 @@
+py -m pip install gradio
+py -m pip install torch
+py -m pip install transformers
+py -m pip install huggingface_hub
