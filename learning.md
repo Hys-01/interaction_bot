@@ -21,3 +21,8 @@ LLM generation
 
 EFFICIENCY OF GENERATION:
     https://discuss.huggingface.co/t/text-generation-pipeline-prohibitively-slow-to-load-even-with-cached-model/40322 
+
+
+Steaming Basics:
+    https://huggingface.co/docs/text-generation-inference/en/conceptual/streaming 
+    https://kavitmht.medium.com/create-a-chatbot-using-hugging-face-and-streamlit-9cbd9b90052b 
