@@ -26,3 +26,9 @@ EFFICIENCY OF GENERATION:
 Steaming Basics:
     https://huggingface.co/docs/text-generation-inference/en/conceptual/streaming 
     https://kavitmht.medium.com/create-a-chatbot-using-hugging-face-and-streamlit-9cbd9b90052b 
+
+
+Finetune project using specific conversational data:
+    https://www.datacamp.com/tutorial/llama3-fine-tuning-locally 
+    https://huggingface.co/docs/transformers/generation_strategies#streaming MORE HELPFUL TO MY USECASE
+        https://github.com/langchain-ai/langchain/issues/2918 even more
