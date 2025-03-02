@@ -3,6 +3,7 @@ import os
 import discord
 from memory import * # memory helper funcs
 from model import generator
+import asyncio
 
 load_dotenv()
 
@@ -43,15 +44,24 @@ async def on_message(message):
         # update history
         history.add_user_input(user_input)
 
+        # console check with stringmatch
+        if user_input.lower() == "testing":
+            await message.reply("confirmed")
+            return 
 
         # generate bot response via AI model
         # BRAIN THINKING USING MEMORY
         try:
-            response = generator(history)
-            botreply = response.generated_response[-1]
+            loop = asyncio.get_event_loop()
+
+            response = await loop.run_in_executor(
+                None,
+                lambda: generator(history)
+            ) 
+            botreply = response.generated_responses[-1]
         except Exception as e:
             print("Error", e)
-            botreply = "error"
+            botreply = "RESPONSE iSSuE"
 
         # UPDATE NOTEBOOK
         update_conversation(user_id, history)

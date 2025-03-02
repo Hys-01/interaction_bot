@@ -10,7 +10,10 @@ model = AutoModelForCausalLM.from_pretrained(
     # torch.float16 and load_in_8bit both meant to save memory in exchange for precision downgrade
     torch_dtype=torch.float16, 
     load_in_8bit=True,
-    device_map="auto") 
+    device_map="auto",
+
+    low_cpu_mem_usage=True  # Reduces RAM usage
+    )    
 
 streamer = TextStreamer(tokenizer)
 generator = pipeline(
