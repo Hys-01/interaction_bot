@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import discord
 from memory import * # memory helper funcs
+from model import generator
 
 load_dotenv()
 
@@ -59,4 +60,4 @@ async def on_message(message):
         await message.reply(botreply)
 
 
-client.run(os.getenv('DC_TOKEN'))
+client.run(os.getenv('DISCORD_TOKEN'))
