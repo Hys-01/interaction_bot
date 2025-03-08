@@ -21,6 +21,7 @@ async def on_ready():
     print(f'We have logged in as {client.user}')
     #status
     await client.change_presence(activity = discord.Game(name="online"))
+    
 
 @client.event
 async def on_message(message):
@@ -42,7 +43,7 @@ async def on_message(message):
         # getting the history of user's interactions with bot
         history = get_conversation(user_id)
         # update history
-        history.add_user_input(user_input)
+        history.add_user_input(user_input, overwrite=True)  # getting some overwrite error with user input so set True
 
         # console check with stringmatch
         if user_input.lower() == "testing":

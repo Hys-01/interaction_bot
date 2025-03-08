@@ -15,4 +15,13 @@ bot does go online at the start for <10 seconds.
 below.
 User input added while unprocessed input was existing: "testing" new input ignored: "nontesting". Set `overwrite` to True to overwrite unprocessed user input
 C:\Users\hbros\AppData\Local\Programs\Python\Python312\Lib\site-packages\transformers\models\qwen2\modeling_qwen2.py:679: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
-  attn_output = torch.nn.functional.scaled_dot_product_attention(
+  attn_output = torch.nn.functional.scaled_dot_product_attention('
+
+
+8/03/2025 
+FIXED. was reffering to wrong variable in udpate_conversation()
+ also updated to make conversationhistory global in memory.py.
+
+Currently: Functional. Uses 'thinking' feature of Deepseek.
+Average response times - 20-30 seconds.
+
