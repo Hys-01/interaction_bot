@@ -2,3 +2,8 @@ py -m pip install gradio
 py -m pip install torch
 py -m pip install transformers
 py -m pip install huggingface_hub
+
+
+
+pip install torch transformers discord.py accelerate bitsandbytes python-dotenv 
+helps with CUDA
